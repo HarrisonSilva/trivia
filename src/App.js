@@ -8,9 +8,9 @@ import Settings from './pages/Settings';
 function App() {
   return (
     <Switch>
-      <Route exact path="/" component={ Login } />
       <Route path="/game" component={ Game } />
       <Route path="/settings" component={ Settings } />
+      <Route exact path="/" component={ Login } />
     </Switch>
   );
 }

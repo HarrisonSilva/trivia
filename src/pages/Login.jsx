@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
-import { playerLogin } from '../redux/actions';
+import { fetchToken, playerLogin } from '../redux/actions';
 
 class Login extends React.Component {
   state = {
-    email: '',
+    gravatarEmail: '',
     name: '',
     isDisabled: true,
     minLength: 0,
@@ -13,11 +13,11 @@ class Login extends React.Component {
 
   handleClick = (event) => {
     event.preventDefault();
-    const { dispatch, history } = this.props;
-    const { name, email } = this.state;
-    dispatch(playerLogin({ name, email }));
+    const { history, dispatch } = this.props;
+    const { name, gravatarEmail } = this.state;
+    dispatch(playerLogin({ name, gravatarEmail }));
+    fetchToken();
     history.push('/game');
-    console.log('Worked!');
   };
 
   handleChange = ({ target }) => {
@@ -27,8 +27,8 @@ class Login extends React.Component {
   };
 
   validateAll = () => {
-    const { name, email, minLength } = this.state;
-    if (name.length > minLength && email.length > minLength) {
+    const { name, gravatarEmail, minLength } = this.state;
+    if (name.length > minLength && gravatarEmail.length > minLength) {
       this.setState({ isDisabled: false });
     } else {
       this.setState({ isDisabled: true });
@@ -42,7 +42,7 @@ class Login extends React.Component {
   };
 
   render() {
-    const { email, name, isDisabled } = this.state;
+    const { gravatarEmail, name, isDisabled } = this.state;
 
     return (
       <form className="form-login">
@@ -63,8 +63,8 @@ class Login extends React.Component {
             data-testid="input-gravatar-email"
             id="input-gravatar-email"
             placeholder="Digite seu email"
-            name="email"
-            value={ email }
+            name="gravatarEmail"
+            value={ gravatarEmail }
             onChange={ this.handleChange }
           />
         </label>
@@ -94,5 +94,5 @@ Login.propTypes = {
   }).isRequired,
   dispatch: PropTypes.func.isRequired,
 };
-// a
+
 export default connect()(Login);
