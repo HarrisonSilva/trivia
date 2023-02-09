@@ -1,24 +1,25 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
-import { playerLogin } from '../redux/actions';
+import { fetchToken, playerLogin } from '../redux/actions';
 
 class Login extends React.Component {
   state = {
-    email: '',
+    gravatarEmail: '',
     name: '',
     isDisabled: true,
-    // validEmail: false,
     minLength: 0,
   };
 
   handleClick = (event) => {
     event.preventDefault();
-    const { dispatch, history } = this.props;
-    const { name, email } = this.state;
-    dispatch(playerLogin({ name, email }));
+    const { history, dispatch } = this.props;
+    const { name, gravatarEmail } = this.state;
+    dispatch(playerLogin({ name, gravatarEmail }));
+    fetchToken();
+    // this.saveToken();
     history.push('/game');
-    console.log('Worked!');
+    // console.log('Worked!');
   };
 
   handleChange = ({ target }) => {
@@ -28,49 +29,16 @@ class Login extends React.Component {
   };
 
   validateAll = () => {
-    const { name, email, minLength } = this.state;
-    if (name.length > minLength && email.length > minLength) {
+    const { name, gravatarEmail, minLength } = this.state;
+    if (name.length > minLength && gravatarEmail.length > minLength) {
       this.setState({ isDisabled: false });
     } else {
       this.setState({ isDisabled: true });
     }
   };
 
-  // handleChange = ({ target: { name, value } }) => {
-  //   this.setState({
-  //     [name]: value,
-  //   }, () => {
-  //     const { email } = this.state;
-  //     this.emailValidation(email);
-  //   });
-  // };
-
-  // buttonState = () => {
-  //   const { name, validEmail, minLength } = this.state;
-  //   const validation = name.length > minLength && validEmail;
-  //   if (validation) {
-  //     this.setState({ isDisabled: false });
-  //   } else {
-  //     this.setState({ isDisabled: true });
-  //   }
-  // };
-
-  // emailValidation = (email) => {
-  //   const reg = /^\S+@\S+\.\S+$/;
-  //   const validated = reg.test(email);
-  //   if (validated) {
-  //     this.setState({ isDisabled: true }, () => {
-  //       this.buttonState();
-  //     });
-  //   } else {
-  //     this.setState({ isDisabled: false }, () => {
-  //       this.buttonState();
-  //     });
-  //   }
-  // };
-
   render() {
-    const { email, name, isDisabled } = this.state;
+    const { gravatarEmail, name, isDisabled } = this.state;
 
     return (
       <form className="form-login">
@@ -91,8 +59,8 @@ class Login extends React.Component {
             data-testid="input-gravatar-email"
             id="input-gravatar-email"
             placeholder="Digite seu email"
-            name="email"
-            value={ email }
+            name="gravatarEmail"
+            value={ gravatarEmail }
             onChange={ this.handleChange }
           />
         </label>
