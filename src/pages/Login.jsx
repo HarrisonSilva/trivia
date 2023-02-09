@@ -17,9 +17,7 @@ class Login extends React.Component {
     const { name, gravatarEmail } = this.state;
     dispatch(playerLogin({ name, gravatarEmail }));
     fetchToken();
-    // this.saveToken();
     history.push('/game');
-    // console.log('Worked!');
   };
 
   handleChange = ({ target }) => {
@@ -35,6 +33,12 @@ class Login extends React.Component {
     } else {
       this.setState({ isDisabled: true });
     }
+  };
+
+  handleSettings = (e) => {
+    e.preventDefault();
+    const { history } = this.props;
+    history.push('/settings');
   };
 
   render() {
@@ -71,6 +75,13 @@ class Login extends React.Component {
           onClick={ this.handleClick }
         >
           Play
+        </button>
+        <button
+          type="button"
+          data-testid="btn-settings"
+          onClick={ this.handleSettings }
+        >
+          Configuração
         </button>
       </form>
     );
