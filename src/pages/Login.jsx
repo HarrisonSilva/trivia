@@ -8,7 +8,6 @@ class Login extends React.Component {
     email: '',
     name: '',
     isDisabled: true,
-    // validEmail: false,
     minLength: 0,
   };
 
@@ -36,38 +35,11 @@ class Login extends React.Component {
     }
   };
 
-  // handleChange = ({ target: { name, value } }) => {
-  //   this.setState({
-  //     [name]: value,
-  //   }, () => {
-  //     const { email } = this.state;
-  //     this.emailValidation(email);
-  //   });
-  // };
-
-  // buttonState = () => {
-  //   const { name, validEmail, minLength } = this.state;
-  //   const validation = name.length > minLength && validEmail;
-  //   if (validation) {
-  //     this.setState({ isDisabled: false });
-  //   } else {
-  //     this.setState({ isDisabled: true });
-  //   }
-  // };
-
-  // emailValidation = (email) => {
-  //   const reg = /^\S+@\S+\.\S+$/;
-  //   const validated = reg.test(email);
-  //   if (validated) {
-  //     this.setState({ isDisabled: true }, () => {
-  //       this.buttonState();
-  //     });
-  //   } else {
-  //     this.setState({ isDisabled: false }, () => {
-  //       this.buttonState();
-  //     });
-  //   }
-  // };
+  handleSettings = (e) => {
+    e.preventDefault();
+    const { history } = this.props;
+    history.push('/settings');
+  };
 
   render() {
     const { email, name, isDisabled } = this.state;
@@ -104,6 +76,13 @@ class Login extends React.Component {
         >
           Play
         </button>
+        <button
+          type="button"
+          data-testid="btn-settings"
+          onClick={ this.handleSettings }
+        >
+          Configuração
+        </button>
       </form>
     );
   }
@@ -115,5 +94,5 @@ Login.propTypes = {
   }).isRequired,
   dispatch: PropTypes.func.isRequired,
 };
-
+// a
 export default connect()(Login);
