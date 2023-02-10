@@ -1,0 +1,15 @@
+.form-login {
+  align-items: center;
+  background-color: aliceblue;
+  border: groove;
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  justify-content: space-evenly;
+  left: 50%;
+  position: absolute;
+  text-align-last: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+}

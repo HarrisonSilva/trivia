@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 class Settings extends Component {
   render() {
     return (
-      <div data-testid="settings-title"> </div>
+      <div data-testid="settings-title">
+        <h1>Configuração</h1>
+      </div>
     );
   }
 }
