@@ -1,6 +1,7 @@
 // import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
+import Header from '../components/Header';
 // import { fetchToken, playerLogin } from '../redux/actions';
 
 class Game extends React.Component {
@@ -8,7 +9,10 @@ class Game extends React.Component {
     // const { gravatarEmail, name, isDisabled } = this.state;
 
     return (
-      <h1>Game</h1>
+      <>
+        <h1>Game</h1>
+        <Header />
+      </>
     );
   }
 }
