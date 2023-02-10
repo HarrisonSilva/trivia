@@ -14,6 +14,7 @@ const player = (state = INITIAL_STATE, { type, payload }) => {
       ...state,
       name: payload.name,
       gravatarEmail: payload.gravatarEmail,
+      score: 0,
     };
   default:
     return state;
