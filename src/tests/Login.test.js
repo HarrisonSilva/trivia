@@ -50,9 +50,9 @@ describe('Testes da página principal (Login)', () => {
     userEvent.type(nameInput, 'teste');
     userEvent.click(playButton);
 
-    const gameTitle = screen.getByRole('heading', /Game/i);
+    const playerName = screen.getByTestId('header-player-name');
 
-    expect(gameTitle).toBeInTheDocument();
+    expect(playerName).toBeInTheDocument();
   });
 
   test('Testa se o botão Configuração navega para a página correta', () => {
