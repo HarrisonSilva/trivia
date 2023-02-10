@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchToken, playerLogin } from '../redux/actions';
+import './Login.css';
 
 class Login extends React.Component {
   state = {
