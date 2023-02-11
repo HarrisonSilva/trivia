@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { MD5 } from 'crypto-js';
 import logo from '../trivia.png';
+import './Header.css';
 
 class Header extends React.Component {
   render() {
@@ -12,21 +13,21 @@ class Header extends React.Component {
 
     return (
       <header className="header-trivia">
+        <p className="header-score" data-testid="header-score">
+          {`Score: ${score}`}
+        </p>
         <img src={ logo } className="App-logo" alt="logo" />
-        <section>
+        <div className="player-info">
           <img
             className="img-profile"
             src={ URL }
             alt="Imagem de Perfil"
             data-testid="header-profile-picture"
           />
-          <h2 className="header-name" data-testid="header-player-name">
+          <p className="header-name" data-testid="header-player-name">
             {name}
-          </h2>
-          <h2 className="header-score" data-testid="header-score">
-            {String(score)}
-          </h2>
-        </section>
+          </p>
+        </div>
       </header>
     );
   }

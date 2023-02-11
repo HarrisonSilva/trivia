@@ -52,7 +52,7 @@ describe('Testes da página principal (Login)', () => {
 
     const playerName = screen.getByTestId('header-player-name');
 
-    expect(playerName).toBeInTheDocument();
+    expect(playerName).toHaveTextContent('teste');
   });
 
   test('Testa se o botão Configuração navega para a página correta', () => {
