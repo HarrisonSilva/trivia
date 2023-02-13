@@ -1,6 +1,7 @@
 // import md5 from 'crypto-js/md5';
 
 export const PLAYER_LOGIN = 'PLAYER_LOGIN';
+export const SCORE = 'SCORE';
 
 export const playerLogin = (payload) => ({
   type: PLAYER_LOGIN,
@@ -11,6 +12,11 @@ const saveToken = (gameToken) => {
   // const token = JSON.stringify(gameToken);
   localStorage.setItem('token', gameToken);
 };
+
+export const scorePlayer = (payload) => ({
+  type: SCORE,
+  payload,
+});
 
 export async function fetchToken() {
   const response = await fetch('https://opentdb.com/api_token.php?command=request');

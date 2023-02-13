@@ -14,7 +14,7 @@ class Header extends React.Component {
     return (
       <header className="header-trivia">
         <p className="header-score" data-testid="header-score">
-          {`Score: ${score}`}
+          {score}
         </p>
         <img src={ logo } className="App-logo" alt="logo" />
         <div className="player-info">
