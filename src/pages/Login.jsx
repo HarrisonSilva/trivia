@@ -12,13 +12,15 @@ class Login extends React.Component {
     minLength: 0,
   };
 
-  handleClick = (event) => {
+  handleClick = async (event) => {
     event.preventDefault();
     const { history, dispatch } = this.props;
     const { name, gravatarEmail } = this.state;
     dispatch(playerLogin({ name, gravatarEmail }));
-    fetchToken();
+    await fetchToken();
     history.push('/game');
+    // const time = 100;
+    // setTimeout(() => { history.push('/game'); }, time);
   };
 
   handleChange = ({ target }) => {
