@@ -14,8 +14,8 @@ const saveToken = (gameToken) => {
 
 export async function fetchToken() {
   const response = await fetch('https://opentdb.com/api_token.php?command=request');
-  console.log(response);
+  // console.log(response);
   const data = await response.json();
-  console.log(data.token);
+  // console.log(data.token);
   saveToken(data.token);
 }
