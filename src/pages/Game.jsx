@@ -2,6 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Header from '../components/Header';
+import Timer from '../components/Timer';
 // import { fetchToken, playerLogin } from '../redux/actions';
 
 class Game extends React.Component {
@@ -10,14 +11,14 @@ class Game extends React.Component {
 
     return (
       <>
-        <h1>Game</h1>
         <Header />
+        <Timer />
       </>
     );
   }
 }
 
-// Login.propTypes = {
+// Game.propTypes = {
 //   history: PropTypes.shape({
 //     push: PropTypes.func.isRequired,
 //   }).isRequired,
