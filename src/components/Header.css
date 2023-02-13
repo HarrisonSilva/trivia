@@ -1,0 +1,14 @@
+.header-trivia {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.player-info {
+  align-items: center;
+  display: flex;
+}
+
+.header-name {
+  margin: 20px;
+}

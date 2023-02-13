@@ -49,11 +49,11 @@ describe('Testes da página principal (Login)', () => {
     userEvent.type(emailInput, 'teste@teste.com');
     userEvent.type(nameInput, 'teste');
     userEvent.click(playButton);
+
     setTimeout(() => {
       const playerName = screen.getByRole('heading', {  name: /0/i})
       expect(playerName).toBeInTheDocument();
     }, 1);
-    
   });
 
   test('Testa se o botão Configuração navega para a página correta', () => {

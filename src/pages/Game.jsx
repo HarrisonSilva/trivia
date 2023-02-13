@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Header from '../components/Header';
+import Timer from '../components/Timer';
 // import { fetchToken, playerLogin } from '../redux/actions';
 
 class Game extends Component {
@@ -58,7 +59,6 @@ class Game extends Component {
     if (isLoading) return (<Header />);
     return (
       <>
-        <h1>Game</h1>
         <Header />
         <div>
           <h1 data-testid="question-category">{info[questionIndex].category}</h1>
@@ -82,6 +82,7 @@ class Game extends Component {
             Next
           </button>
         </div>
+        <Timer />
       </>
     );
   }
