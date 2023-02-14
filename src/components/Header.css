@@ -4,7 +4,7 @@ nav {
   box-shadow: inset 0 0 0.5em 0 var(--glow-color) , 0 0 0.5em 0 var(--glow-color);
   display: flex;
   height: 20vh;
-  justify-content: space-between;
+  justify-content:flex-end;
   left: 0;
   margin: 0;
   padding: 80px;
@@ -24,16 +24,27 @@ nav {
   color: white;
   text-transform: uppercase;
 }
-
+.user-data {
+display: flex;
+align-self: flex-start;
+}
 .img-profile {
   border: 4px solid rgb(41, 41, 202);
   border-radius: 50%;
   height: 90px;
   object-fit: cover;
+  margin: 0 20px;
 
 }
-
+.main-title{
+  position: absolute;
+  left: 52%;
+  transform: translate(-45%);
+}
 .title {
+  position: absolute;
+  left: 52%;
+  transform: translate(-45%);
   animation: border-flicker 2s linear infinite;
   background: none;
   border: 0.15em solid var(--glow-color);

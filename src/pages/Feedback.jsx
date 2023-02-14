@@ -50,28 +50,28 @@ class Feedback extends Component {
             data-testid="header-profile-picture"
           /> */}
           <container className="container-feedback">
-            <div className="feedback-main">
-              <p data-testid="feedback-text" className="titlef">
-                {assertions < minNumberOfAnswers ? 'Could be better...'
-                  : 'Well Done!'}
-              </p>
+            <p data-testid="feedback-text" className="titlef">
+              {assertions < minNumberOfAnswers ? 'Could be better...'
+                : 'Well Done!'}
+            </p>
 
-              <p data-testid="feedback-total-question" className="acertos">
-                Você acertou
-                {' '}
+            <p className="acertos">
+              Você acertou
+              {' '}
+              <span data-testid="feedback-total-question">
                 {assertions}
-                {' '}
-                questões!
-              </p>
-              <p data-testid="feedback-total-score" className="score">
-                Um total de
-                {' '}
-                {score}
-                {' '}
-                pontos!
-              </p>
+              </span>
+              {assertions === 1 ? ' questão!' : ' questões!'}
 
-            </div>
+            </p>
+            <p className="score">
+              Um total de
+              {' '}
+              <span data-testid="feedback-total-score">{score}</span>
+              {' '}
+              pontos!
+            </p>
+
           </container>
           <container className="btn-container">
             <button

@@ -13,28 +13,32 @@ class Header extends React.Component {
     return (
       <header className="header-trivia">
         <nav>
-
-          <h2 className="header-name" data-testid="header-player-name">
-            Nome:
-            {name}
-          </h2>
-          <h2 className="header-score" data-testid="header-score">
-            Score:
-            {String(score)}
-          </h2>
-          <button className="glowing-btn">
+          <div className="user-data">
+            <img
+              className="img-profile"
+              src={ URL }
+              alt="Imagem de Perfil"
+              data-testid="header-profile-picture"
+            />
+            <h2 className="header-name" data-testid="header-player-name">
+              Nome:
+              {name}
+            </h2>
+          </div>
+          <button className="glowing-btn main-ti">
             <span className="glowing-txt">
               TR
               <span className="faulty-letter">I</span>
               VIA
             </span>
           </button>
-          <img
-            className="img-profile"
-            src={ URL }
-            alt="Imagem de Perfil"
-            data-testid="header-profile-picture"
-          />
+
+          <h2 className="header-score">
+            Score:
+            {' '}
+            <span data-testid="header-score">{score}</span>
+
+          </h2>
         </nav>
       </header>
     );
