@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './Timer.css';
 
 class Timer extends Component {
   state = { time: 30 };

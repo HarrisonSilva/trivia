@@ -48,45 +48,57 @@ class Login extends React.Component {
     const { gravatarEmail, name, isDisabled } = this.state;
 
     return (
-      <form className="form-login">
-        <label htmlFor="input-player-name">
-          <input
-            type="text"
-            data-testid="input-player-name"
-            id="input-player-name"
-            placeholder="Digite seu nome"
-            name="name"
-            value={ name }
-            onChange={ this.handleChange }
-          />
-        </label>
-        <label htmlFor="input-gravatar-email">
-          <input
-            type="text"
-            data-testid="input-gravatar-email"
-            id="input-gravatar-email"
-            placeholder="Digite seu email"
-            name="gravatarEmail"
-            value={ gravatarEmail }
-            onChange={ this.handleChange }
-          />
-        </label>
-        <button
-          type="button"
-          data-testid="btn-play"
-          disabled={ isDisabled }
-          onClick={ this.handleClick }
-        >
-          Play
-        </button>
-        <button
-          type="button"
-          data-testid="btn-settings"
-          onClick={ this.handleSettings }
-        >
-          Configuração
-        </button>
-      </form>
+      <div className="container">
+        <form className="form-login">
+          <label htmlFor="input-player-name">
+            <input
+              className="input-login"
+              type="text"
+              data-testid="input-player-name"
+              id="input-player-name"
+              placeholder="Digite seu nome"
+              name="name"
+              value={ name }
+              onChange={ this.handleChange }
+            />
+          </label>
+          <label htmlFor="input-gravatar-email">
+            <input
+              className="input-login"
+              type="text"
+              data-testid="input-gravatar-email"
+              id="input-gravatar-email"
+              placeholder="Digite seu email"
+              name="gravatarEmail"
+              value={ gravatarEmail }
+              onChange={ this.handleChange }
+            />
+          </label>
+          <button
+            className="glowing-btn"
+            type="button"
+            data-testid="btn-play"
+            disabled={ isDisabled }
+            onClick={ this.handleClick }
+          >
+            <span className="glowing-txt">
+              P
+              <span className="faulty-letter">L</span>
+              AY
+            </span>
+          </button>
+          <button
+            className="btn-configura"
+            type="button"
+            data-testid="btn-settings"
+            onClick={ this.handleSettings }
+
+          >
+            Configuração
+          </button>
+
+        </form>
+      </div>
     );
   }
 }
