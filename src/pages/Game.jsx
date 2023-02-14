@@ -150,7 +150,7 @@ class Game extends Component {
             {answers.map((answer, index) => (
               <button
                 className={ questionAnswered
-                  ? `answer-btn ${ this.checkAnswer(answer, info[questionIndex], index) }`
+                  ? `answer-btn ${this.checkAnswer(answer, info[questionIndex], index)}`
                   : 'answer-btn' }
                 type="button"
                 key={ index }
