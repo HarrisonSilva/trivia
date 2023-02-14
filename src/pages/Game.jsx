@@ -103,7 +103,6 @@ class Game extends Component {
 
   nextBtn = () => {
     const { questionIndex, info } = this.state;
-    console.log(questionIndex);
     const { history } = this.props;
     const lastQuestionIndex = 4;
     if (questionIndex !== lastQuestionIndex) {
