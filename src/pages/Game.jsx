@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Header from '../components/Header';
 import { scorePlayer } from '../redux/actions';
-// import Timer from '../components/Timer';
-// import { fetchToken, playerLogin } from '../redux/actions';
+import './Game.css';
 
+const correctAnswer = 'correct-answer';
 class Game extends Component {
   state = {
     answers: [],
@@ -90,11 +90,10 @@ class Game extends Component {
     dispatch(scorePlayer(score));
   };
 
-  // checkAnswer = (answer, question, index) => (
-  //   answer === question.correct_answer ? 'correct-answer' : `wrong-answer-${index}`);
+  checkAnswer = (answer, question, index) => (
+    answer === question.correct_answer ? correctAnswer : `wrong-answer-${index}`);
 
   answerQuestion = (time, question, name) => {
-    // const correctAnswer = checkAnswer(question, answer, index);
     if (name === 'correct-answer') {
       this.handleDifficulty(time, question.difficulty);
     }
@@ -120,9 +119,7 @@ class Game extends Component {
   render() {
     const { info, questionIndex, isLoading,
       time, isDisabled, questionAnswered, answers } = this.state;
-    const correctAnswer = 'correct-answer';
     if (isLoading) return (<Header />);
-    // console.log(this.checkAnswer('xablau', { correct_answer: 'xablau' }, 0));
     return (
       <>
         <Header />
@@ -132,13 +129,14 @@ class Game extends Component {
           <div data-testid="answer-options">
             {answers.map((answer, index) => (
               <button
+                className={ questionAnswered
+                  ? this.checkAnswer(answer, info[questionIndex], index)
+                  : '' }
                 type="button"
                 key={ index }
                 disabled={ isDisabled }
-                name={ answer === info[questionIndex].correct_answer
-                  ? correctAnswer : `wrong-answer-${index}` }
-                data-testid={ answer === info[questionIndex].correct_answer
-                  ? correctAnswer : `wrong-answer-${index}` }
+                name={ this.checkAnswer(answer, info[questionIndex], index) }
+                data-testid={ this.checkAnswer(answer, info[questionIndex], index) }
                 onClick={ ({ target }) => {
                   this.answerQuestion(time, info[questionIndex], target.name);
                 } }
