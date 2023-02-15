@@ -4,6 +4,7 @@
 
   --glow-color: hsl(215, 86%, 43%);
 
+  --main-color: rgb(54, 14, 119);
 
 }
 
@@ -27,9 +28,9 @@ body {
 
 
 .form-login {
-  border: 0.15em solid (--color);
+  border: 0.2em solid var(--glow-color);
   border-radius: 1em;
-  box-shadow: inset 0 0 0.5em 0 var(--glow-color) , 0 0 0.5em 0 var(--glow-color);
+  box-shadow: 0 5px 40px 0 rgb(54, 14, 119);
   height: 520px;
   justify-content: center;
   margin: 5px;
@@ -39,11 +40,21 @@ body {
   width: 500px;
 }
 
+/* input:-webkit-autofill{
+  -webkit-text-fill-color: blue !important;
+  -webkit-box-shadow: 0 0 0 1000px black inset;
+} */
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+  box-shadow: 0 0 0 1000px black inset;
+  -webkit-text-fill-color: white;
+}
+
 .input-login {
   background: none;
   border: 0.15em solid var(--glow-color);
   border-radius: 0.45em;
-  box-shadow: 0 0 2em 0.2em var (--glow-color);
+  box-shadow: 0 5px 5px 0 rgb(54, 14, 119);
   color: var(--glow-color);
   cursor: pointer;
   font-family: Raleway , sans-serif;
@@ -259,12 +270,6 @@ body {
   }
 }
 
-@media only screen and ( max-width : 1200px ) {
-
-  .glowing-btn {
-    font-size: 1em;
-  }
-}
 
 .btn-configura {
   animation: border-flicker 2s linear infinite;
@@ -281,4 +286,11 @@ body {
   padding: 0.55em 1em;
   perspective: 1em;
   text-transform: uppercase;
+}
+
+@media only screen and ( max-width : 952px ) {
+
+  .input-login, .btn-configura {
+    margin-bottom: 30px;
+  }
 }

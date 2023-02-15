@@ -3,20 +3,26 @@
 
 }
 
-.container-feedback {
+.feedback-main {
   align-items: center;
   display: flex;
-  justify-content: center;
-  margin: 100px;
-
+  flex-direction: column;
 }
 
-.feedback-main {
-  border: 4px solid hsl(254, 84%, 46%);
+.container-feedback {
+  align-items: center;
+  border: 4px solid var(--glow-color);
   border-radius: 1em;
-  box-shadow: 0 5px 10px 0 rgb(54, 14, 119);
-
+  box-shadow: 8px 8px 10px 0 var(--main-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 50%;
+  margin: 100px;
+  transform: translate(0 50%);
+  width: 600px;
 }
+
 
 .titlef {
   animation: border-flicker 2s linear infinite;
@@ -31,8 +37,7 @@
   font-family: Raleway , sans-serif;
   font-size: 3em;
   font-weight: 900;
-  margin: 50px;
-  padding: 0.35em 1em;
+  margin: 40px;
   perspective: 2em;
 }
 
@@ -66,10 +71,8 @@
 .acertos, .score {
   display: flex;
   font-size: 2em;
+  gap: 10px;
 
-  /* border:solid 5px #3b0bc0; */
-  gap: 40px;
-  justify-content: center;
 }
 
 .btn-container {
@@ -82,7 +85,7 @@
 .ranking-btn {
   background-color: #3b0bc0;
   border: 4px solid hsl(254, 84%, 46%);
-  border-radius: 25px;
+  border-radius: 15px;
   box-shadow: 0 5px 10px 0 rgb(54, 14, 119);
   color: white;
   font-size: 1em;
@@ -93,7 +96,7 @@
 .play-again-btn {
   background-color: #3b0bc0;
   border: 4px solid hsl(254, 84%, 46%);
-  border-radius: 25px;
+  border-radius: 15px;
   box-shadow: 0 5px 10px 0 rgb(54, 14, 119);
   color: white;
   font-size: 1em;
@@ -106,4 +109,15 @@
   border-radius: 50%;
   display: flex;
   justify-content: center;
+}
+
+
+@media only screen and ( max-width : 952px ) {
+
+  .container-feedback {
+    font-size: 12px;
+    margin-bottom: 19px;
+    margin-top: 12px;
+    width: 540px;
+  }
 }

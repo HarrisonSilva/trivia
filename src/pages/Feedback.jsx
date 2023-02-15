@@ -42,7 +42,7 @@ class Feedback extends Component {
     return (
       <>
         <Header />
-        <main>
+        <main className="feedback-main">
           {/* <img
             className="img"
             src={ URL }

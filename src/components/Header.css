@@ -1,10 +1,10 @@
 nav {
   align-items: center;
-  border: 0.15em solid (--color);
+  border: 0.15em solid (--glow-color);
   box-shadow: inset 0 0 0.5em 0 var(--glow-color) , 0 0 0.5em 0 var(--glow-color);
   display: flex;
   height: 20vh;
-  justify-content:flex-end;
+  justify-content: space-around;
   left: 0;
   margin: 0;
   padding: 80px;
@@ -24,27 +24,28 @@ nav {
   color: white;
   text-transform: uppercase;
 }
+
 .user-data {
-display: flex;
-align-self: flex-start;
+  align-items: center;
+  display: flex;
 }
-.img-profile {
+
+.header-img-profile {
   border: 4px solid rgb(41, 41, 202);
   border-radius: 50%;
   height: 90px;
-  object-fit: cover;
   margin: 0 20px;
+  object-fit: cover;
 
 }
-.main-title{
-  position: absolute;
+
+/* .main-title {
   left: 52%;
+  position: absolute;
   transform: translate(-45%);
-}
+} */
+
 .title {
-  position: absolute;
-  left: 52%;
-  transform: translate(-45%);
   animation: border-flicker 2s linear infinite;
   background: none;
   border: 0.15em solid var(--glow-color);
@@ -56,10 +57,13 @@ align-self: flex-start;
   font-family: Raleway , sans-serif;
   font-size: 2em;
   font-weight: 900;
+  left: 52%;
   letter-spacing: 1em;
   margin: 50px;
   padding: 0.35em 1em;
   perspective: 2em;
+  position: absolute;
+  transform: translate(-45%);
 }
 
 @keyframes border-flicker {
@@ -93,16 +97,16 @@ align-self: flex-start;
 
   .glowing-btn {
     font-size: 1em;
-    margin: 0;
+    text-align: center;
+
   }
 }
 
 @media only screen and ( max-width : 952px ) {
 
   .header-name, .header-score {
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 900;
-    padding: 20px;
   }
 
   .img-profile {
@@ -117,4 +121,5 @@ align-self: flex-start;
     transition: all 0.5s;
     width: 100%;
   }
+
 }

@@ -132,7 +132,11 @@ class Game extends Component {
               {info[questionIndex].question}
             </h1>
 
-            <p className="timer">{ `Tempo restante: ${time}` }</p>
+            <p className="timer">
+              { `Tempo restante: ${time}` }
+              {' '}
+              <div className="spinner" />
+            </p>
             { questionAnswered && (
               <button
                 className="next-btn"
@@ -165,6 +169,7 @@ class Game extends Component {
               </button>
             ))}
           </div>
+
         </container>
       </>
     );

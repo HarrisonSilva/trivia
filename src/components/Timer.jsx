@@ -28,9 +28,13 @@ class Timer extends Component {
   render() {
     const { time } = this.state;
     return (
-      <div data-testid="settings-title">
-        <p>{ `Tempo restante: ${time}` }</p>
-      </div>
+      <>
+        <div data-testid="settings-title">
+          <p>{`Tempo restante: ${time}`}</p>
+        </div>
+        <div className="spinner" />
+
+      </>
     );
   }
 }

@@ -15,7 +15,7 @@ class Header extends React.Component {
         <nav>
           <div className="user-data">
             <img
-              className="img-profile"
+              className="header-img-profile"
               src={ URL }
               alt="Imagem de Perfil"
               data-testid="header-profile-picture"
