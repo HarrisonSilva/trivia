@@ -1,0 +1,35 @@
+.container-player-score {
+  align-items: center;
+  border: 4px solid var(--glow-color);
+  border-radius: 1em;
+  box-shadow: 0 5px 280px 0 rgb(54, 14, 119);
+  display: flex;
+  height: 40%;
+  justify-content: space-around;
+  padding: 20px;
+  width: 40%;
+
+}
+
+
+.img-profile {
+  border-radius: 50%;
+  height: 90px;
+  width: 90px;
+
+}
+
+.player-name, .player-score {
+  color: white;
+  display: inline-block;
+  font-size: 30px;
+}
+
+@media only screen and ( max-width : 952px ) {
+
+  .container-player-score {
+    font-size: 2 , 5em;
+    margin-bottom: 15px;
+    width: 480px;
+  }
+}

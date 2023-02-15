@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './Timer.css';
 
 class Timer extends Component {
   state = { time: 30 };
@@ -27,9 +28,13 @@ class Timer extends Component {
   render() {
     const { time } = this.state;
     return (
-      <div data-testid="settings-title">
-        <p>{ `Tempo restante: ${time}` }</p>
-      </div>
+      <>
+        <div data-testid="settings-title">
+          <p>{`Tempo restante: ${time}`}</p>
+        </div>
+        <div className="spinner" />
+
+      </>
     );
   }
 }

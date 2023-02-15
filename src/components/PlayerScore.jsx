@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './PlayerScore.css';
 
 class PlayerScore extends Component {
   render() {
     const { player: { picture, name, score }, index } = this.props;
     return (
-      <div>
+      <div
+        className="container-player-score"
+      >
         <img
           className="img-profile"
           src={ picture }

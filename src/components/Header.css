@@ -1,14 +1,125 @@
-.header-trivia {
+nav {
   align-items: center;
+  border: 0.15em solid (--glow-color);
+  box-shadow: inset 0 0 0.5em 0 var(--glow-color) , 0 0 0.5em 0 var(--glow-color);
   display: flex;
+  height: 20vh;
   justify-content: space-around;
+  left: 0;
+  margin: 0;
+  padding: 80px;
+  text-align: left;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
 }
 
-.player-info {
-  align-items: center;
-  display: flex;
-}
 
 .header-name {
-  margin: 20px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.header-score {
+  color: white;
+  text-transform: uppercase;
+}
+
+.user-data {
+  align-items: center;
+  display: flex;
+}
+
+.header-img-profile {
+  border: 4px solid rgb(41, 41, 202);
+  border-radius: 50%;
+  height: 90px;
+  margin: 0 20px;
+  object-fit: cover;
+
+}
+
+/* .main-title {
+  left: 52%;
+  position: absolute;
+  transform: translate(-45%);
+} */
+
+.title {
+  animation: border-flicker 2s linear infinite;
+  background: none;
+  border: 0.15em solid var(--glow-color);
+  border-radius: 0.45em;
+  box-shadow: inset 0 0 0.5em 0 var(--glow-color) , 0 0 0.5em 0 var(--glow-color);
+  color: var(--glow-color);
+  cursor: pointer;
+  display: flex;
+  font-family: Raleway , sans-serif;
+  font-size: 2em;
+  font-weight: 900;
+  left: 52%;
+  letter-spacing: 1em;
+  margin: 50px;
+  padding: 0.35em 1em;
+  perspective: 2em;
+  position: absolute;
+  transform: translate(-45%);
+}
+
+@keyframes border-flicker {
+
+  0% {
+    opacity: 0.1;
+  }
+
+  2% {
+    opacity: 1;
+  }
+
+  4% {
+    opacity: 0.1;
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and ( max-width : 1440px ) {
+
+  .glowing-btn {
+    font-size: 1em;
+    text-align: center;
+
+  }
+}
+
+@media only screen and ( max-width : 952px ) {
+
+  .header-name, .header-score {
+    font-size: 12px;
+    font-weight: 900;
+  }
+
+  .img-profile {
+    height: 60px;
+    margin-left: 20px;
+  }
+
+  nav {
+    justify-content: space-around;
+    left: -100%;
+    top: 80px;
+    transition: all 0.5s;
+    width: 100%;
+  }
+
 }

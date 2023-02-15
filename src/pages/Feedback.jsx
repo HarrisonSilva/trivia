@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { MD5 } from 'crypto-js';
 import Header from '../components/Header';
+import './Feedback.css';
 
 class Feedback extends Component {
   componentDidMount() {
@@ -35,36 +36,61 @@ class Feedback extends Component {
 
   render() {
     const { assertions, score } = this.props;
+
     const minNumberOfAnswers = 3;
+
     return (
       <>
         <Header />
-        <main>
-          <p data-testid="feedback-text">
-            {assertions < minNumberOfAnswers ? 'Could be better...'
-              : 'Well Done!'}
-          </p>
+        <main className="feedback-main">
+          {/* <img
+            className="img"
+            src={ URL }
+            alt="Imagem de Perfil"
+            data-testid="header-profile-picture"
+          /> */}
+          <container className="container-feedback">
+            <p data-testid="feedback-text" className="titlef">
+              {assertions < minNumberOfAnswers ? 'Could be better...'
+                : 'Well Done!'}
+            </p>
 
-          <p data-testid="feedback-total-score">
-            {score}
-          </p>
-          <p data-testid="feedback-total-question">
-            {assertions}
-          </p>
-          <button
-            onClick={ this.playAgain }
-            data-testid="btn-play-again"
-            type="button"
-          >
-            Play Again
-          </button>
-          <button
-            onClick={ this.goToRanking }
-            data-testid="btn-ranking"
-            type="button"
-          >
-            Ranking
-          </button>
+            <p className="acertos">
+              Você acertou
+              {' '}
+              <span data-testid="feedback-total-question">
+                {assertions}
+              </span>
+              {assertions === 1 ? ' questão!' : ' questões!'}
+
+            </p>
+            <p className="score">
+              Um total de
+              {' '}
+              <span data-testid="feedback-total-score">{score}</span>
+              {' '}
+              pontos!
+            </p>
+
+          </container>
+          <container className="btn-container">
+            <button
+              className="play-again-btn"
+              onClick={ this.playAgain }
+              data-testid="btn-play-again"
+              type="button"
+            >
+              Play Again
+            </button>
+            <button
+              className="ranking-btn"
+              onClick={ this.goToRanking }
+              data-testid="btn-ranking"
+              type="button"
+            >
+              Ranking
+            </button>
+          </container>
         </main>
       </>
     );

@@ -2,7 +2,6 @@ import { PropTypes } from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { MD5 } from 'crypto-js';
-import logo from '../trivia.png';
 import './Header.css';
 
 class Header extends React.Component {
@@ -13,21 +12,34 @@ class Header extends React.Component {
 
     return (
       <header className="header-trivia">
-        <p className="header-score" data-testid="header-score">
-          {score}
-        </p>
-        <img src={ logo } className="App-logo" alt="logo" />
-        <div className="player-info">
-          <img
-            className="img-profile"
-            src={ URL }
-            alt="Imagem de Perfil"
-            data-testid="header-profile-picture"
-          />
-          <p className="header-name" data-testid="header-player-name">
-            {name}
-          </p>
-        </div>
+        <nav>
+          <div className="user-data">
+            <img
+              className="header-img-profile"
+              src={ URL }
+              alt="Imagem de Perfil"
+              data-testid="header-profile-picture"
+            />
+            <h2 className="header-name" data-testid="header-player-name">
+              Nome:
+              {name}
+            </h2>
+          </div>
+          <button className="glowing-btn main-ti">
+            <span className="glowing-txt">
+              TR
+              <span className="faulty-letter">I</span>
+              VIA
+            </span>
+          </button>
+
+          <h2 className="header-score">
+            Score:
+            {' '}
+            <span data-testid="header-score">{score}</span>
+
+          </h2>
+        </nav>
       </header>
     );
   }

@@ -1,0 +1,95 @@
+.animation-container {
+  display: flex;
+  justify-content: center;
+}
+
+.title-ranking {
+  align-items: center;
+  animation: border-flicker 2s linear infinite;
+  background: none;
+  border: 0.15em solid var(--glow-color);
+  border-radius: 0.45em;
+  box-shadow: 0 25px 80px 0 rgb(54, 14, 119);
+  color: var(--glow-color);
+  display: flex;
+  font-family: Raleway , sans-serif;
+  font-size: 3em;
+  font-weight: 900;
+  height: 150px;
+  justify-content: center;
+  letter-spacing: 1em;
+  margin: 50px;
+  padding: 0.35em 1em;
+  perspective: 2em;
+  width: 999px;
+}
+
+@keyframes border-flicker {
+
+  0% {
+    opacity: 0.1;
+  }
+
+  2% {
+    opacity: 1;
+  }
+
+  4% {
+    opacity: 0.1;
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.ranking {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 60px;
+
+}
+
+.btn-container {
+  display: flex;
+  margin-bottom: 800px;
+}
+
+.go-home-btn {
+  background-color: black;
+  border: 4px solid hsl(254, 84%, 46%);
+  border-radius: 15px;
+  box-shadow: 0 5px 10px 0 rgb(54, 14, 119);
+  color: var(--glow-color);
+  font-size: 1em;
+  height: 70px;
+  margin: 35px;
+  padding: 10px;
+  text-transform: uppercase;
+  width: 20%;
+}
+
+@media only screen and ( max-width : 952px ) {
+
+  .title-ranking {
+    font-size: 2 , 5em;
+    margin-bottom: 10px;
+    padding-right: 5px;
+    width: 540px;
+  }
+
+  .go-home-btn {
+    width: 220px;
+  }
+}

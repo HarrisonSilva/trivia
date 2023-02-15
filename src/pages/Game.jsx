@@ -123,15 +123,39 @@ class Game extends Component {
     return (
       <>
         <Header />
-        <div>
-          <h1 data-testid="question-category">{info[questionIndex].category}</h1>
-          <h2 data-testid="question-text">{info[questionIndex].question}</h2>
-          <div data-testid="answer-options">
+        <container className="game-container">
+          <div className="question-card">
+            <h1 data-testid="question-category" className="categoria">
+              {info[questionIndex].category}
+            </h1>
+            <h1 data-testid="question-text" className="question-text">
+              {info[questionIndex].question}
+            </h1>
+
+            <p className="timer">
+              { `Tempo restante: ${time}` }
+              {' '}
+              <div className="spinner" />
+            </p>
+            { questionAnswered && (
+              <button
+                className="next-btn"
+                type="button"
+                data-testid="btn-next"
+                onClick={ this.nextBtn }
+              >
+                Next
+              </button>
+
+            )}
+          </div>
+
+          <div data-testid="answer-options" className="answers-container">
             {answers.map((answer, index) => (
               <button
                 className={ questionAnswered
-                  ? this.checkAnswer(answer, info[questionIndex], index)
-                  : '' }
+                  ? `answer-btn ${this.checkAnswer(answer, info[questionIndex], index)}`
+                  : 'answer-btn' }
                 type="button"
                 key={ index }
                 disabled={ isDisabled }
@@ -145,17 +169,8 @@ class Game extends Component {
               </button>
             ))}
           </div>
-          <p>{ `Tempo restante: ${time}` }</p>
-          { questionAnswered && (
-            <button
-              type="button"
-              data-testid="btn-next"
-              onClick={ this.nextBtn }
-            >
-              Next
-            </button>
-          )}
-        </div>
+
+        </container>
       </>
     );
   }
