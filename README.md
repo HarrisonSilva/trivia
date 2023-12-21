@@ -1,10 +1,7 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+#Trivia
+O projeto consiste no desenvolvimento de um jogo de perguntas e respostas semelhante ao Trivia, inspirado no formato de um show de perguntas e respostas. A aplicação será construída utilizando as tecnologias React e Redux, e o desenvolvimento será realizado em grupo, com a organização das tarefas sendo gerenciada por um quadro Kanban.
+#Colaboradoes
+Vinicius Lamberti
+Shinji Matsumoto
+Nai Cacique
+Vinicius Angelim
