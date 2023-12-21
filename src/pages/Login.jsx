@@ -49,6 +49,12 @@ class Login extends React.Component {
 
     return (
       <div className="container">
+        <h1
+          style={ { textAlign: 'center' } }
+        >
+          Trivia
+
+        </h1>
         <form className="form-login">
           <label htmlFor="input-player-name">
             <input
